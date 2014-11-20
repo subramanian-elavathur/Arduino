@@ -1,0 +1,4 @@
+replace wire.send->wire.write
+replace wire.receive->wire.read
+
+in .cpp file of the library

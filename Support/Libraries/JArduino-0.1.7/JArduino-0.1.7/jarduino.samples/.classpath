@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><classpath><classpathentry including="**/*.java" kind="src" path="src/main/java"/>
+<classpathentry kind="lib" path="lib/jcommon-1.0.15.jar"/>
+<classpathentry kind="lib" path="lib/jcommon-1.0.16.jar"/>
+<classpathentry kind="lib" path="lib/jfreechart-1.0.13.jar"/>
+<classpathentry kind="lib" path="lib/jmf.jar"/>
+<classpathentry kind="lib" path="lib/jstun.jar"/>
+<classpathentry kind="lib" path="lib/org.kevoree.extra.osgi.rxtx-2.2.0.jar"/>
+<classpathentry kind="lib" path="lib/org.sintef.jarduino.core-0.1.7-SNAPSHOT.jar"/>
+<classpathentry kind="lib" path="lib/org.sintef.jarduino.gui-0.1.7-SNAPSHOT.jar"/>
+<classpathentry kind="lib" path="lib/twitter4j-core-2.2.2.jar"/>
+<classpathentry kind="lib" path="lib/voiceclearly-1.0.0.jar"/>
+<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/><classpathentry kind="output" path="target/classes"/></classpath>

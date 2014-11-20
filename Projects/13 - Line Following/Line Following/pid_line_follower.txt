@@ -1,0 +1,161 @@
+int i,a,b,c,d,f;
+long int j=1;
+
+int p=40.355,in=0,di=0,er,e,ep,ei,ed;
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(9,OUTPUT);
+  pinMode(10,OUTPUT);
+  pinMode(7,OUTPUT);
+  pinMode(6,OUTPUT);
+  pinMode(A0,INPUT);
+  pinMode(A1,INPUT);
+  pinMode(A2,INPUT);
+  pinMode(A3,INPUT);
+  pinMode(A4,INPUT);
+}
+void loop()
+{
+  j=1;
+  int l=200,r=200;
+  a=digitalRead(A0);
+  b=digitalRead(A1);
+  c=digitalRead(A2);
+  d=digitalRead(A3);
+  f=digitalRead(A4);
+  int x[]={a,b,c,d,f };
+  for(i=0;i<=4;i++)
+  {
+    j=j*10+x[i];  
+  }
+  if(a==0&&f==0)
+  {
+    digitalWrite(9,HIGH);
+    digitalWrite(7,LOW);
+    digitalWrite(10,HIGH);
+    digitalWrite(6,LOW);
+  }
+  else
+  {
+  switch (j)
+  {
+  case 111011:
+    e=0;
+    break;
+  case 111001:
+    e=1;
+    break;
+  case 111101:
+    e=2;
+    break;
+  case 111100:
+    e=3;
+    break;
+  case 111110:
+    e=4;
+    break; 
+  case 111000:
+    e=5;
+    break;
+  case 110000:
+    e=6;
+    break;  
+  case 110011:
+    e=-1;
+    break;
+  case 110111:
+    e=-2;
+    break;
+  case 100111:
+    e=-3;
+    break;
+  case 101111:
+    e=-4;
+    break;
+  case 100011:
+    e=-5;
+    break;
+  case 100001:
+    e=-6;
+    break;
+    default:
+    e=ep;
+    break;
+ 
+  } 
+
+  ei=ei+e;
+  ed=(e-ep);
+  er=e*p+ei*in+ep*di;
+  ep=e;
+  Serial.println(er);
+
+ 
+  if(er>0)
+  {
+    l=l+er;
+    r=r-er;
+  }
+  else if(er<0)
+  {
+    r=r-er;
+    l=l+er;
+  }
+  if(r>250)
+  r=250;
+  if(l>250)
+  l=250;
+  
+  switch(e)
+  {
+  case 0:
+    analogWrite(9,150);
+    analogWrite(10,150);
+    break;
+  case 1:
+  case 2:
+  case 3:
+  case 4:
+    digitalWrite(6,LOW);
+    digitalWrite(7,LOW);
+    analogWrite(9,l);
+    analogWrite(10,r);
+    break;
+  case 5:
+  case 6:
+    digitalWrite(6,HIGH);
+    digitalWrite(7,LOW);
+    analogWrite(9,l);
+    analogWrite(10,r);
+    break;
+  case -1:
+  case -2:
+  case -3:
+  case -4:
+    digitalWrite(6,LOW);
+    digitalWrite(7,LOW);
+    analogWrite(9,l);
+    analogWrite(10,r);
+    break;
+  case -5:
+  case -6:
+    digitalWrite(6,LOW);
+    digitalWrite(7,HIGH);
+    analogWrite(9,l);
+    analogWrite(10,r);
+ 
+  }
+  Serial.print("r=");
+Serial.println(r);
+ Serial.println(l);
+}
+
+
+}
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+'Predefined commands that has no parametres or only external parametres
+#S|T|TIME|[]#
+#S|D|DATE|[]#
+#S|SENDK|SENDK|[$1&$2]#
+
+
+
